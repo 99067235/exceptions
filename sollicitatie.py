@@ -26,6 +26,7 @@ def man():
 
 def vrouw():
     global geslaagd
+    global antwoord
     try:
         if antwoord =="V":
             antwoord = input("heeft u rood krulhaar? Y/N ").upper()
@@ -34,6 +35,7 @@ def vrouw():
                 if antwoord >= 20:
                     antwoord = int(input("Hoelang bent u in cm? "))
                     if antwoord >= 150:
+                        input("hoevaak heeft u aan uw grote teen gelikt? ")
                         antwoord = int(input("Hoeveel weegt u in kg? "))
                         if antwoord >= 90:
                             antwoord = float(input("Welke schoenmaat heeft u? "))
@@ -50,6 +52,7 @@ def vrouw():
         vrouw()
 
 def mboDiploma():
+    global antwoord
     input("heeft u weleens kattenharen op brood gesmeerd? ")
     try:
         antwoord = input("Bent u in het bezit van een diploma MBO 4 ondernemen? Y/N ").upper()
@@ -75,8 +78,8 @@ def sollicitatie():
     global geslaagd
     try:
         name = input("wat is uw naam? ")
-        if name == "John":
-            raise NameError("John is niet geaccepteerd")
+        if name == "De enderdraak":
+            raise NameError("De enderdraak is niet geaccepteerd")
         else:
             pass
 
