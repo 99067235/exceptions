@@ -20,8 +20,8 @@ def man():
                                     antwoord = int(input("Hoever kunt u springen in cm? "))
                                     if antwoord >= 100:
                                         geslaagd = True
-    except ValueError():
-        print("Daar snap ik niks van, we beginnen even opnieuw.")
+    except ValueError:
+        print("Daar snap ik niks van, we gaan even een stukje terug.")
         man()
 
 def vrouw():
@@ -47,7 +47,7 @@ def vrouw():
                                         antwoord = int(input("Hoever kunt u springen in cm? "))
                                         if antwoord >= 100:
                                             geslaagd = True
-    except ValueError():
+    except ValueError:
         print("Daar snap ik niks van, we beginnen even opnieuw.")
         vrouw()
 
@@ -60,22 +60,25 @@ def mboDiploma():
             antwoord = int(input("welk niveau? "))
             if antwoord >= 4:
                 pass
-    except ValueError():
-        raise NameError("ik wist het wel")
+    except ValueError:
+        raise NameError("Ziet u wel! U hebt wel een raam van hout!")
     try:
         antwoord = input("Bent u in bezit van een hoge hoed? Y/N ").upper()
         if antwoord == "Y":
             antwoord = input("Bent u man of vrouw? M/V ").upper()
             if antwoord == "M":
                 man()
-            else:
+            elif antwoord == "V":
                 vrouw()
-    except ValueError():
+            else:
+                print("Dat snap ik niet, we gaan even een stukje terug.")
+                mboDiploma()
+    except:
         print("daar snap ik niks van")
         mboDiploma()
 
 def sollicitatie():
-    global geslaagd
+    global geslaagd, antw1, antw2, name
     try:
         name = input("wat is uw naam? ")
         if name == "De enderdraak":
@@ -95,8 +98,8 @@ def sollicitatie():
             antw2 = True
         else:
             antw2 = False
-    except ValueError():
-        print("Dat is geen nummer")
+    except:
+        print("Dat snap ik niet, we gaan even een stukje terug.")
         sollicitatie()
 
 
@@ -107,6 +110,6 @@ def sollicitatie():
 sollicitatie()
 
 if geslaagd == True:
-    print("Gefeliciteerd! U hebt het certificaat: Overleven met gevaarlijk personeel!")
+    print("Gefeliciteerd", name, "! U hebt het certificaat: Overleven met gevaarlijk personeel!")
 else:
-    print("Sorry, maar u bent niet geschikt voor het beroep ruimtevuilnisman")
+    print("Sorry", name, ", maar u bent niet geschikt voor het beroep ruimtevuilnisman")
